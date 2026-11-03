@@ -1,5 +1,7 @@
 # 📌 Google ADK Helpdesk Agent
 > 입사 연차 별 연차 일수 자동 계산 에이전트
+> 
+> Sub-Agent 사용 예시
 
 ## ⚡ 주요 기능 (Features)
 > IT, HR(인사), GA(총무) 문의별 서브 에이전트로 호출
