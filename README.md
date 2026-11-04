@@ -1,7 +1,7 @@
-# 📌 Google ADK Helpdesk Agent
-> 입사 연차 별 연차 일수 자동 계산 에이전트
+# 📌 Google ADK Multi Agent Helpdesk Coordinator
+> 사용자 문의를 코디네이터 에이전트가 분류해 IT, HR, GA 담당 하위 에이전트로 전달, 해결불가 건은 티켓 접수
 > 
-> Google-ADK Sub-Agent 사용 예시
+> 단일 거대 에이전트 대신 Google-ADK Sub-Agent 사용 예시 
 
 ## ⚡ 주요 기능 (Features)
 > IT, HR(인사), GA(총무) 문의별 서브 에이전트로 호출
@@ -35,5 +35,5 @@ adk deploy agent_engine \
   --project="프로젝트명" \
   --region="리전명" \
   --display_name="에이전트명" \
-  hr_policy_agent
+  "에이전트 프로젝트 경로"
 ```
