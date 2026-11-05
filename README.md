@@ -29,6 +29,13 @@ adk web
 127.0.0.1:8000
 ```
 
+- Agent 동작 확인
+```bash
+VPN 이 계속 끊겨요 > it_support 로 이동 및 해결 제공
+재직증명서 발급 가능해요? > hr_support
+2층 프린터 출력이 안돼요 > ga_support
+```
+
 - 검증 완료 후 Gemini Enterprise 에 에이전트로 등록
 ```bash
 adk deploy agent_engine \
