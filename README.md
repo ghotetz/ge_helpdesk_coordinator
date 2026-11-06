@@ -7,7 +7,7 @@
 > IT, HR(인사), GA(총무) 문의별 서브 에이전트로 호출
 
 ## 🛠 기술 스택 (Tech Stack)
-- Google ADK, Python
+- Google ADK, Python, Multi-Agent, Sub-Agents, Gemini-Enterprise, AI-Agents
 
 ## 💻 시작 가이드 (Getting Started)
 - Google Cloud 인증
