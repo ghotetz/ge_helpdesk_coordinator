@@ -14,7 +14,7 @@
 ```bash
 gcloud auth login
 gcloud auth application-default login
-gcloud config set project ax-gemini-lab
+gcloud config set project "gcp-project"
 ```
 
 - Google ADK 설치
@@ -44,3 +44,63 @@ adk deploy agent_engine \
   --display_name="에이전트명" \
   "에이전트 프로젝트 경로"
 ```
+
+# 📌 Multi-Agent Helpdesk Coordinator (Google ADK)
+
+> A coordinator agent classifies employee requests and hands them off to IT, HR, or General Affairs (GA) sub-agents; anything that cannot be resolved is filed as a ticket.
+>
+> An example of using Google ADK **sub-agents** instead of one monolithic agent.
+
+## ⚡ Features
+
+- Routes each request to the right sub-agent: IT, HR, or GA
+- Each sub-agent handles only its own domain
+- Unresolved requests fall back to ticket creation
+
+## 🛠 Tech Stack
+
+- Google ADK (multi-agent, sub-agents), Python, Gemini Enterprise
+
+## 💻 Getting Started
+
+### 1. Authenticate to Google Cloud
+
+```bash
+gcloud auth login
+gcloud auth application-default login
+gcloud config set project "gcp-project"
+```
+
+### 2. Install Google ADK
+
+```bash
+python -m venv .venv && source .venv/bin/activate
+pip install google-adk litellm
+```
+
+### 3. Run the agent locally
+
+```bash
+adk web
+# open http://127.0.0.1:8000
+```
+
+### 4. Try it
+
+| Prompt | Expected behavior |
+| --- | --- |
+| My VPN keeps disconnecting | Hands off to `it_support`, which provides a fix |
+| Can I get a certificate of employment? | Hands off to `hr_support` |
+| The 2nd-floor printer isn't working | Hands off to `ga_support` |
+
+### 5. Deploy and register in Gemini Enterprise
+
+```bash
+adk deploy agent_engine \
+  --project="<project-id>" \
+  --region="<region>" \
+  --display_name="<agent-name>" \
+  "<path-to-agent-project>"
+```
+
+Once deployed to Vertex AI Agent Engine, register the agent in Gemini Enterprise.
